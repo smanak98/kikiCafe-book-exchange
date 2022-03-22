@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {Router} from '@reach/router';
+import AllBooks from './components/AllBooks';
+import EditBook from './components/EditBook';
+import DisplayBook from './components/DisplayBook';
+import NewBook from './components/NewBook';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <AllBooks path="/"/>
+        <NewBook path="/books/new"/>
+        <DisplayBook path="/books/:id"/>
+        <EditBook path="/books/:id/edit"/>
+
+
+      </Router>
+
+
     </div>
   );
 }
